@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.bogdan.score.ui.viewmodel.MainFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:background="@drawable/circular_shape"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/userScore_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/your_credit_score_is"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/progress_bar"
+            app:layout_constraintBottom_toTopOf="@id/currentUserScore"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar"
+            app:layout_constraintStart_toStartOf="@id/progress_bar"
+            app:layout_constraintTop_toTopOf="@id/progress_bar" />
+
+        <TextView
+            android:id="@+id/currentUserScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@id/maxUserScore"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar"
+            app:layout_constraintStart_toStartOf="@id/progress_bar"
+            app:layout_constraintTop_toBottomOf="@id/userScore_text"
+            tools:text="351" />
+
+        <TextView
+            android:id="@+id/maxUserScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:text="@string/max_user_score"
+            app:layout_constraintBottom_toBottomOf="@id/progress_bar"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar"
+            app:layout_constraintStart_toStartOf="@id/progress_bar"
+            app:layout_constraintTop_toBottomOf="@id/currentUserScore"
+            tools:text="out of 700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/errorText"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="40dp"
+            tools:text="Something error"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
